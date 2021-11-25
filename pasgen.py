@@ -1,6 +1,8 @@
+"Program pro generování hesla"
+
 import random, string
 
-class color:
+class color:    # barva nadpisu
     RED = "\033[91m"
     END = "\033[0m"
 
@@ -13,7 +15,7 @@ delka = int(input("Zadejte požadovanou délku hesla: "))
 print("Zadej typ požadovaného složení hesla:")
 typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))   # volba typu hesla (1,2,3)
 if typ_hesla == 1:
-    heslo = "", delka.join(random.SystemRandom().choice(pismena + cisla + znaky)) # pojebaná délka hesla pořád nejde
+    heslo = "".join(random.SystemRandom().choice(pismena + cisla + znaky)) # pojebaná délka hesla pořád nejde
     print("Vygenerované heslo je:", heslo)
 elif typ_hesla == 2:
         heslo = "".join(random.SystemRandom().choice(pismena + cisla))
