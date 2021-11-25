@@ -11,9 +11,9 @@ znaky = string.punctuation  # importujeme znaky z ascii
 delka = int(input("Zadejte požadovanou délku hesla: "))
 
 print("Zadej typ požadovaného složení hesla:")
-typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))   #volba typu hesla (1,2,3)
+typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))   # volba typu hesla (1,2,3)
 if typ_hesla == 1:
-    heslo = "".join(random.SystemRandom().choice(pismena + cisla + znaky, * delka)) # pojebaná délka hesla pořád nejde
+    heslo = "", delka.join(random.SystemRandom().choice(pismena + cisla + znaky)) # pojebaná délka hesla pořád nejde
     print("Vygenerované heslo je:", heslo)
 elif typ_hesla == 2:
         heslo = "".join(random.SystemRandom().choice(pismena + cisla))
