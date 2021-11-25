@@ -1,25 +1,21 @@
-import random
+import random, string
 
 print("====PASGEN====\ngenerátor hesel\n===============")
-mala_pismena = # vyzkoušet přidání ascii
-#["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-velka_pismena = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-cisla = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-znaky = ["/", "'", ":", ",", ".", ";", "<", ">", "~", "!", "@", "#", "$", "%", "^", "&", "*", "+", "=", "[", "]", "{", "}", "?", "-"]
-delka_hesla = [8]
+pismena = string.ascii_lowercase + string.ascii_uppercase   # importujeme malá i velká oísmena z ascii
+cisla = string.digits   # importujeme čísla z ascii
+znaky = string.punctuation  # importujeme znaky z ascii
 
-delka = int(input("Zadej požadovanou délku hesla: "))
-delka_hesla.append(delka)
-print("Zadej číslo požadovaného složení hesla:")
-typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))
+print("Zadej typ požadovaného složení hesla:")
+typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))   #volba typu hesla (1,2,3)
 if typ_hesla == 1:
-    heslo = random.choice(mala_pismena + velka_pismena + cisla + znaky), len(delka_hesla) # nevím jak udělat délku hesla!!
-    print("Vaše heslo je:", heslo)
+    for i in range(8):
+        heslo = random.SystemRandom().choice(pismena + cisla + znaky)
+        print("Vygenerované heslo je:", heslo)
 elif typ_hesla == 2:
-        heslo = random.choice(mala_pismena + velka_pismena + cisla)
-        print("Vaše heslo je:", heslo)
+        heslo = random.SystemRandom().choice(pismena + cisla)
+        print("Vygenerované heslo je:", heslo)
 else:
-    heslo = random.choice(mala_pismena + velka_pismena, delka)
-    print("Vaše heslo je:", heslo)
+    heslo = random.SystemRandom().choice(pismena)
+    print("Vygenerované heslo je:", heslo)
 print("Děkujeme za použití generátoru hesel. Stisknutím klávesy jej zavřete.")
 input()
