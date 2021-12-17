@@ -6,7 +6,6 @@ class color:    # barva nadpisu
     RED = "\033[91m"
     END = "\033[0m"
 
-print(color.RED + "===================\n॥ Generátor hesel ॥\n===================" + color.END)
 pismena = string.ascii_lowercase + string.ascii_uppercase   # importujeme malá i velká oísmena z ascii
 cisla = string.digits   # importujeme čísla z ascii
 znaky = string.punctuation  # importujeme znaky z ascii
