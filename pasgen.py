@@ -1,15 +1,22 @@
-"Program pro generování hesla"
+"""
+Program pro generování hesla
+"""
 
 import random, string
 
-class color:    # barva nadpisu
-    RED = "\033[91m"
-    END = "\033[0m"
+print("""                                  
+ _ __   __ _ ___  __ _  ___ _ __  
+| '_ \ / _` / __|/ _` |/ _ \ '_ \ 
+| |_) | (_| \__ \ (_| |  __/ | | |
+| .__/ \__,_|___/\__, |\___|_| |_|
+|_|              |___/            
+""")
 
-print("===================\n॥ Generátor hesel ॥\n===================")
-pismena = string.ascii_lowercase + string.ascii_uppercase   # importujeme malá i velká oísmena z ascii
-cisla = string.digits   # importujeme čísla z ascii
-znaky = string.punctuation  # importujeme znaky z ascii
+
+pismena = list(string.ascii_lowercase + string.ascii_uppercase) # importujeme malá i velká oísmena z ascii
+cisla = list(string.digits)   # importujeme čísla z ascii
+znaky = list(string.punctuation)  # importujeme znaky z ascii
+heslo = []
 delka = int(input("Zadejte požadovanou délku hesla: "))
 
 print("Zadej typ požadovaného složení hesla:")
@@ -17,17 +24,37 @@ typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) P
 
 # volba písmena, čísla i znaky
 if typ_hesla == 1:
-    heslo = "".join(random.SystemRandom().choice(pismena + cisla + znaky)) # pojebaná délka hesla pořád nejde
-    print("Vygenerované heslo je:", heslo)
+    if delka >= 3:
+        while len(heslo) < delka:
+                znak = random.SystemRandom().choice(pismena)
+                heslo.append(znak)
+                znak = random.SystemRandom().choice(cisla)
+                heslo.append(znak)
+                znak = random.SystemRandom().choice(znaky)
+                heslo.append(znak)
+    else:
+        print("Délka hesla je pro požadovaný typ moc krátká")
 
 # volba písmena a čísla
 elif typ_hesla == 2:
-        heslo = "".join(random.SystemRandom().choice(pismena + cisla))
-        print("Vygenerované heslo je:", heslo)
+    if delka >= 2:
+        while len(heslo) < delka:
+                znak = random.SystemRandom().choice(pismena)
+                heslo.append(znak)
+                znak = random.SystemRandom().choice(cisla)
+                heslo.append(znak)
 
 # volba písmena
 elif typ_hesla == 3:
-    heslo = "".join(random.SystemRandom().choice(pismena))
-    print("Vygenerované heslo je:", heslo)
-print("Děkujeme za použití generátoru hesel. Stisknutím klávesy jej zavřete.")
+    for i in range(delka):
+        znak = random.SystemRandom().choice(pismena)
+        heslo.append(znak)
+
+random.shuffle(heslo)
+if len(heslo) > 0:
+    print("Vygenerované heslo je:", "".join(heslo))
+print("""
+Děkujeme za použití generátoru hesel. Stisknutím klávesy jej zavřete.
+***Hacker Ninjas North 2022***
+""")
 input()
