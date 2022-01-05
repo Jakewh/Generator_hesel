@@ -1,6 +1,4 @@
 # Generator_hesel
- Program není dokončen.
- Program is not finished.
 
  CZ
  Jednoduchý program pro generování hesel. 
