@@ -14,13 +14,19 @@ delka = int(input("Zadejte požadovanou délku hesla: "))
 
 print("Zadej typ požadovaného složení hesla:")
 typ_hesla = int(input("1) Písmena, čísla i znaky\t2) Písmena a čísla\t3) Písmena\n"))   # volba typu hesla (1,2,3)
+
+# volba písmena, čísla i znaky
 if typ_hesla == 1:
     heslo = "".join(random.SystemRandom().choice(pismena + cisla + znaky)) # pojebaná délka hesla pořád nejde
     print("Vygenerované heslo je:", heslo)
+
+# volba písmena a čísla
 elif typ_hesla == 2:
         heslo = "".join(random.SystemRandom().choice(pismena + cisla))
         print("Vygenerované heslo je:", heslo)
-else:
+
+# volba písmena
+elif typ_hesla == 3:
     heslo = "".join(random.SystemRandom().choice(pismena))
     print("Vygenerované heslo je:", heslo)
 print("Děkujeme za použití generátoru hesel. Stisknutím klávesy jej zavřete.")
