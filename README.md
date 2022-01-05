@@ -1,4 +1,4 @@
-# Generator_hesel
+# Pasgen
 
  CZ
  Jednoduchý program pro generování hesel. 
